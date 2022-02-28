@@ -2,3 +2,9 @@
     display: flex;
     margin-top: 10px;
 }
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    background-color: rgb(235, 235, 255);
+}
