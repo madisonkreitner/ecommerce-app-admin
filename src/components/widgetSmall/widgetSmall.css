@@ -16,6 +16,7 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    margin-right: 10px;
 }
 
 .widgetSmallList {
@@ -38,6 +39,7 @@
 
 .widgetSmallUsername {
     font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .widgetSmallUserTitle {

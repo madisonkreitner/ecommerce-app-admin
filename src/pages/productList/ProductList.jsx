@@ -4,6 +4,13 @@ import { productRows } from "../../dummyData";
 import { DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Topbar from "../../components/topbar/Topbar";
+import styled from "styled-components";
+import Sidebar from "../../components/sidebar/Sidebar";
+
+const Container = styled.div`
+    display: flex;
+`;
 
 const ProductList = () => {
     const [data, setData] = useState(productRows);
@@ -46,16 +53,22 @@ const ProductList = () => {
     ];
 
     return (
-        <div className="productList">
-            <DataGrid
-                rows={data}
-                columns={columns}
-                pageSize={10}
-                rowsPerPageOptions={[10]}
-                disableSelectionOnClick
-                checkboxSelection  
-            />
-        </div>
+        <>
+            <Topbar />
+            <Container>
+                <Sidebar />
+                <div className="productList">
+                    <DataGrid
+                        rows={data}
+                        columns={columns}
+                        pageSize={10}
+                        rowsPerPageOptions={[10]}
+                        disableSelectionOnClick
+                        checkboxSelection  
+                        />
+                </div>
+            </Container>
+        </>
     )
 }
 

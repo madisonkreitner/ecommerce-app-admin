@@ -4,6 +4,13 @@ import { DeleteOutline } from "@mui/icons-material";
 import "./userList.css"
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Topbar from "../../components/topbar/Topbar";
+import styled from "styled-components";
+import Sidebar from "../../components/sidebar/Sidebar";
+
+const Container = styled.div`
+    display: flex;
+`;
 
 const UserList = () => {
     const [data, setData] = useState(rows);
@@ -47,16 +54,22 @@ const UserList = () => {
     
 
     return (
-        <div className="userList">
-            <DataGrid
-                rows={data}
-                columns={columns}
-                pageSize={10}
-                rowsPerPageOptions={[10]}
-                disableSelectionOnClick
-                checkboxSelection  
-            />
-        </div>
+        <>
+            <Topbar />
+            <Container>
+                <Sidebar />
+                <div className="userList">
+                    <DataGrid
+                        rows={data}
+                        columns={columns}
+                        pageSize={10}
+                        rowsPerPageOptions={[10]}
+                        disableSelectionOnClick
+                        checkboxSelection  
+                        />
+                </div>
+            </Container>
+        </>
     )
 }
 
